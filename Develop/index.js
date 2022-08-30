@@ -50,7 +50,7 @@ inquirer
         },
         {
             type: 'input',
-            name: 'instructions',
+            name: 'test',
             message: questions[7],
         },
         {
