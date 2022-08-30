@@ -11,10 +11,12 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+// Grab data from index.js .prompt/.then function
 function generateMarkdown(data) {
   return `# ${data.title}
 
 `;
 }
 
+// This will simply allow this function to be available to me in the index.js file
 module.exports = generateMarkdown;
