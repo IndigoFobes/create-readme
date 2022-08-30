@@ -60,13 +60,14 @@ inquirer
             choices: ['Apache', 'GNU', 'MIT', 'ISC', 'Mozilla', 'Boost', 'Unlicense', 'None/other']
         },
     ])
-    // .then((answers) => {
-    //     const readmeContent = generateReadme(answers);
-    //     // (path, data, err)
-    //     fs.writeFile('README.md', readmeContent, (err) =>
-    //     err ? console.log(err) : console.log('README.md created!') 
-    //     );
-    // });
+    .then((data) => {
+        // Plop this data into the generateMarkdown function, defined in the utils file.
+        const readmeContent = generateMarkdown(data);
+        // (path, data, err)
+        fs.writeFile('README.md', readmeContent, (err) =>
+        err ? console.log(err) : console.log('README.md created!') 
+        );
+    });
 
 
 //console.log(process.argv);
