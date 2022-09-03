@@ -1,6 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -13,6 +15,9 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 // Grab data from index.js .prompt/.then function
 function generateMarkdown(data) {
+  if (data.license == 'None/other') {
+    data.license = '';
+  }
   return `# ${data.title}
 
   ## Description
@@ -36,7 +41,7 @@ function generateMarkdown(data) {
   <a name="usage"></a>
   ## Usage
 
-  ${data.usage}
+  ${data.use}
 
   <a name="license"></a>
   ## License
@@ -60,7 +65,10 @@ function generateMarkdown(data) {
 
   For more questions, email me at ${data.email}.
 `;
+
 }
+
+
 
 // This will simply allow this function to be available to me in the index.js file
 module.exports = generateMarkdown;
