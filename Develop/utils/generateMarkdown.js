@@ -10,7 +10,9 @@ function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+ console.log('hello!');
+}
 
 // TODO: Create a function to generate markdown for README
 // Grab data from index.js .prompt/.then function
@@ -18,6 +20,7 @@ function generateMarkdown(data) {
   if (data.license == 'None/other') {
     data.license = '';
   }
+
   return `# ${data.title}
 
   ## Description
@@ -72,3 +75,4 @@ function generateMarkdown(data) {
 
 // This will simply allow this function to be available to me in the index.js file
 module.exports = generateMarkdown;
+

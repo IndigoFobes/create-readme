@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js')
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const renderLicenseSection = require('./utils/generateMarkdown.js');
+//const renderLicenseSection = require('./utils/generateMarkdown.js');
 //const process = require('process');
 
 // TODO: Create an array of questions for user input
@@ -59,6 +61,7 @@ inquirer
             message: questions[8],
             choices: ['Apache', 'GNU', 'MIT', 'ISC', 'Mozilla', 'Boost', 'Unlicense', 'None/other']
         },
+        
     ])
     .then((data) => {
         // Plop this data into the generateMarkdown function, defined in the utils file.
@@ -67,9 +70,11 @@ inquirer
         fs.writeFile('README.md', readmeContent, (err) =>
         err ? console.log(err) : console.log('README.md created!') 
         );
+        //
     });
 
 
+    
 //console.log(process.argv);
 
 // TODO: Create a function to initialize app
