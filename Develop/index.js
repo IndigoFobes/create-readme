@@ -1,17 +1,13 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-//const renderLicenseSection = require('./utils/generateMarkdown.js');
-//const process = require('process');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = ['What is the title of your project?', 'Please type your GitHub username:', 'Please type your email address:', 'Please enter a description of your project:', 'Please explain how to install your application:', 'Please explain how to use your application:', 'Please explain contribution guideluines:', 'Please provide test instructions:', 'Please select a licensing option...'];
 
-// TODO: Create a function to write README file
-// What would the parameters be, if any?
+// Create a function to write README file
 const writeReadme = () =>
-    // where the `readme` will go.
 inquirer
     .prompt ([
         {
@@ -63,20 +59,15 @@ inquirer
         
     ])
     .then((data) => {
-        // Plop this data into the generateMarkdown function, defined in the utils file.
+        // Plop this data into the generateMarkdown function, defined in the generateMarkdown.js file.
         const readmeContent = generateMarkdown(data);
         // (path, data, err)
         fs.writeFile('README.md', readmeContent, (err) =>
         err ? console.log(err) : console.log('README.md created!') 
         );
-        //
     });
 
-
-    
-//console.log(process.argv);
-
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     writeReadme();
 }
