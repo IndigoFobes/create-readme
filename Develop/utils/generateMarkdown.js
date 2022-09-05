@@ -2,26 +2,65 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
 
+  if (license == 'None/other') {
+    return ``;
+  }
+  else {
+    return `[![](https://img.shields.io/badge/license-${license}-green.svg)](${renderLicenseLink(license)})`
+  }
+  
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'Apache':
+      return 'https://apache.org/licenses/';
+    break;
+    case 'GNU':
+      return 'https://www.gnu.org/licenses/';
+      break;
+    case 'MIT':
+      return 'https://mit-license.org/';
+      break;
+    case 'ISC':
+      return 'https://www.isc.org/licenses/';
+      break;
+    case 'Mozilla':
+      return 'https://www.mozilla.org/en-US/MPL/2.0/';
+      break;
+    case 'Boost':
+      return 'https://www.boost.org/doc/libs/1_31_0/LICENSE_1_0.txt';
+      break;
+    case 'Unlicense':
+      return 'https://unlicense.org/';
+      break;
+  }
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
- console.log('hello!');
+  if (license == 'None/other') {
+    return ``;
+  }
+  else {
+    return `This application is licenced under ${license}`;
+  }
 }
 
 // TODO: Create a function to generate markdown for README
 // Grab data from index.js .prompt/.then function
 function generateMarkdown(data) {
-  if (data.license == 'None/other') {
-    data.license = '';
-  }
+  
 
-  return `# ${data.title}
+
+  return `
+  ${renderLicenseBadge(data.license)}
+
+  # ${data.title}
 
   ## Description
 
@@ -49,7 +88,7 @@ function generateMarkdown(data) {
   <a name="license"></a>
   ## License
 
-  ${data.license}
+  ${renderLicenseSection(data.license)}
 
   <a name="contribution"></a>
   ## How to Contribute
