@@ -26,7 +26,8 @@ This was my first node.js/command line application, so I learned quite a bit abo
 
 https://user-images.githubusercontent.com/105685042/188517476-9a1a71ae-403b-407f-97c9-250bf4f56b7b.mp4
 
-- [Questions](#questions)
+<a name="questions"></a>
+## Questions
 
 Link to my GitHub Profile [here](https://github.com/IndigoFobes)
 
